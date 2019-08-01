@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { actionCreators } from './store';
+import { CSSTransition } from 'react-transition-group';
 import { 
   HeaderWrapper,
   Logo,
@@ -7,62 +9,137 @@ import {
   NavItem,
   SearchWrappper,
   NavSearch,
+  SearchHot,
+  SearchHotTitle,
+  SearchHotSwitch,
+  SearchList,
+  SearchItem,
   Addition,
   Button
 } from './style.js';
-import { CSSTransition } from 'react-transition-group';
 
-import { actionCreators } from './store';
-
-const Header = (props) => {
-  return (
-    <HeaderWrapper className="header-wrapper clearfix">
-      <Logo className="logo"/>
-      <Nav className="nav clearfix">
-        <NavItem className="fl active">首页</NavItem>
-        <NavItem className="fl"><i className="iconfont">&#xe615;</i>下载App</NavItem>
-        <NavItem className="fr">登录</NavItem>
-        <NavItem className="fr">
-          <i className="iconfont">&#xe636;</i>
-        </NavItem>
-        <SearchWrappper className="fl">
-          <CSSTransition
-            timeout={200}
-            in={props.focused}
-            classNames="slide"
-            >
-            <NavSearch
-              onFocus={props.handleInputFocus}
-              onBlur={props.handleInputBlur}
-              className={props.focused ? 'focused' : ''}
+class Header extends Component {
+  getHotSearchArea() {
+    const { 
+      focused, 
+      list, 
+      page,
+      totalPage,
+      mouseIn, 
+      handleMouseEnter, 
+      handleMouseLeave,
+      handleClickChange
+    } = this.props;
+    const newList = list.toJS();
+    const newItem = [];
+    //maxPageNum 当最后一页数据少于10的时候避免渲染多余的dom
+    const maxPageNum = (page === totalPage ? newList.length : page * 10);
+    if(newList.length) {
+      for(let i = (page - 1) * 10; i < maxPageNum; i ++) {
+        newItem.push(
+          <SearchItem key={newList[i]}>{newList[i]}</SearchItem>
+        )
+      }
+    }
+    if(focused || mouseIn) {
+      return(
+        <SearchHot 
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <SearchHotTitle>热门搜索</SearchHotTitle>
+          <SearchHotSwitch onClick={() => handleClickChange(page, totalPage, this.spinIconn)}>
+            <i ref={(icon) => {this.spinIconn = icon}} className="iconfont spin">&#xe606;</i>换一批
+          </SearchHotSwitch>
+          <SearchList>
+            {newItem}
+          </SearchList>
+        </SearchHot>
+      );
+    } else {
+      return null;
+    }
+  }
+  render() {
+    const { focused, handleInputFocus, handleInputBlur, list } = this.props;
+    return (
+      <HeaderWrapper className="header-wrapper clearfix">
+        <Logo className="logo"/>
+        <Nav className="nav clearfix">
+          <NavItem className="fl active">首页</NavItem>
+          <NavItem className="fl"><i className="iconfont">&#xe615;</i>下载App</NavItem>
+          <NavItem className="fr">登录</NavItem>
+          <NavItem className="fr">
+            <i className="iconfont">&#xe636;</i>
+          </NavItem>
+          <SearchWrappper className="fl">
+            <CSSTransition
+              timeout={200}
+              in={focused}
+              classNames="slide"
               >
-            </NavSearch>
-          </CSSTransition>
-          <i className={props.focused ? 'focused iconfont' : 'iconfont'}
-          >&#xe69d;</i>
-        </SearchWrappper>
-      </Nav>
-      <Addition className="fr">
-        <Button className="fl sign-up">注册</Button>
-        <Button className="fl write-btn">
-          <i className="iconfont" style={{marginRight: 10}}>&#xe61c;</i>
-          写文章</Button>
-      </Addition>
-    </HeaderWrapper>
-  );
+              <NavSearch
+                onFocus={() => handleInputFocus(list)}
+                onBlur={handleInputBlur}
+                className={focused ? 'focused' : ''}
+                >
+              </NavSearch>
+            </CSSTransition>
+            <i className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}
+            >&#xe69d;</i>
+            {this.getHotSearchArea()}
+          </SearchWrappper>
+        </Nav>
+        <Addition className="fr">
+          <Button className="fl sign-up">注册</Button>
+          <Button className="fl write-btn">
+            <i className="iconfont" style={{marginRight: 10}}>&#xe61c;</i>
+            写文章</Button>
+        </Addition>
+      </HeaderWrapper>
+    );
+  }
 }
+
 const mapStateToProps = (state) => {
   return {
-    focused: state.header.focused
+    //下面两种方等价的  state.getIn([a, b])表示获取a模块（store）里面的b这个值
+    // focused: state.get('header').get('focused')
+    focused: state.getIn(['header', 'focused']),
+    list: state.getIn(['header', 'list']),
+    page: state.getIn(['header', 'page']),
+    totalPage: state.getIn(['header', 'totalPage']),
+    mouseIn: state.getIn(['header', 'mouseIn']),
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleInputFocus() {
+    handleInputFocus(list) { //这个list是fromJS转换后的immutable对象 里面的size表示长度
+      (list.size === 0) && dispatch(actionCreators.getList());
       dispatch(actionCreators.searchFocuse());
     },
     handleInputBlur() {
       dispatch(actionCreators.searchBlur());
+    },
+    handleMouseEnter() {
+      dispatch(actionCreators.mouseEnter());
+    },
+    handleMouseLeave() {
+      dispatch(actionCreators.mouseLeave());
+    },
+    handleClickChange(page, totalPage, spin) {
+      let originAngle = spin.style.transform.replace(/[^0-9]/ig, ''); //去除所有非数字的字符
+      if(originAngle) {
+        originAngle = parseInt(originAngle);
+      } else {
+        originAngle = 0;
+      }
+      spin.style.transform = "rotate(" + (originAngle + 360) + "deg)";
+      if(page < totalPage) {
+        dispatch(actionCreators.changePage(page + 1));
+      } else {
+        dispatch(actionCreators.changePage(1));
+      }
     }
   }
 }
