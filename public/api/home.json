@@ -1,0 +1,26 @@
+{
+  "code": 200,
+  "data": {
+    "topicList": [{
+      "id": 1,
+      "info": "热点新闻",
+      "imgUrl": "//upload-images.jianshu.io/upload_images/16235793-06ec0cd353e846e9.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+    }, {
+      "id": 2,
+      "info": "净网行动",
+      "imgUrl": "//upload.jianshu.io/admin_banners/web_images/4680/f3832b8ec185f3772a31960a2494964132f29ce0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
+    }],
+    "articleList": [{
+      "id": 1,
+      "title": "对当前JAVA流行框架的一些小感悟",
+      "desc": "这几年，蹦出了不少各种JAVA框架，像是spring boot、spring cloud 和spring mvc或者是mybatis等等。 不断...",
+      "imgUrl": "//upload-images.jianshu.io/upload_images/13394159-d9b345a0e3e68297?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+    },
+    {
+      "id": 2,
+      "title": "用知识地图搭建知识管理系统",
+      "desc": "这次文章来自于今天在笔记侠年会的分享 2018年6月我成为了笔记侠笔记达人。 当时我纠结了一个月，本来我四月份就看到这个笔记达人招募的信息了，然...",
+      "imgUrl": "//upload-images.jianshu.io/upload_images/2539924-9da41b9b07cb87ed.JPG?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+    }]
+  }
+}

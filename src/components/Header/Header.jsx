@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
 import { CSSTransition } from 'react-transition-group';
@@ -17,8 +17,9 @@ import {
   Addition,
   Button
 } from './style.js';
+import { Link } from 'react-router-dom';
 
-class Header extends Component {
+class Header extends PureComponent {
   getHotSearchArea() {
     const { 
       focused, 
@@ -64,7 +65,9 @@ class Header extends Component {
     const { focused, handleInputFocus, handleInputBlur, list } = this.props;
     return (
       <HeaderWrapper className="header-wrapper clearfix">
-        <Logo className="logo"/>
+        <Link to="/">
+          <Logo className="logo"/>
+        </Link>
         <Nav className="nav clearfix">
           <NavItem className="fl active">首页</NavItem>
           <NavItem className="fl"><i className="iconfont">&#xe615;</i>下载App</NavItem>

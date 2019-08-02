@@ -9,13 +9,10 @@ export const HeaderWrapper = styled.div`
   box-shadow: 0px 1px 0px rgba(0, 0, 0, .1);
 `;
 
-export const Logo = styled.a.attrs({
-  href: '/'
-})`
+export const Logo = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  display: block;
   width: 100px;
   height: 58px;
   background: url(${logoPic});

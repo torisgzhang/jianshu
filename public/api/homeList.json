@@ -1,0 +1,12 @@
+{
+  "code": 200,
+  "data": [{
+    "id": 3,
+    "desc": "热点新闻3333",
+    "imgUrl": "//upload-images.jianshu.io/upload_images/16235793-06ec0cd353e846e9.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+  }, {
+    "id": 4,
+    "desc": "净网行动4444444",
+    "imgUrl": "//upload.jianshu.io/admin_banners/web_images/4680/f3832b8ec185f3772a31960a2494964132f29ce0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
+  }]
+}
