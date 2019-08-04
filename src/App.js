@@ -8,14 +8,8 @@ import Header from '@/components/Header/Header.jsx';
 import Home from "@/pages/home/home.jsx";
 import Detail from "@/pages/detail/detail.jsx";
 import ScrollTop from "@/components/ScrollTop/ScrollTop.jsx";
-
 //这里按照路由4.0+方式写否则控制台会有警告“Invalid prop `component` of type `object` supplied to `Route`, expected `function`”
-const HomePageRoute = () => <Home />
-const DetailPageRoute = () => {
-  return (
-    <Detail />
-  )
-}
+
 class App extends Component {
   render() {
     return (
@@ -27,8 +21,8 @@ class App extends Component {
           <BrowserRouter>
             <div>
               <Header />
-              <Route path="/" exact component={HomePageRoute}></Route>
-              <Route path="/detail" exact component={DetailPageRoute}></Route>
+              <Route path="/" exact component={(props) => <Home {...props} />}></Route>
+              <Route path="/detail/:id" exact component={(props) => <Detail {...props} />}></Route>
             </div>
           </BrowserRouter>
         </div>

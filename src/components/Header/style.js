@@ -94,6 +94,7 @@ export const SearchHot = styled.div`
   top: 58px;
   left: 15px;
   width: 240px;
+  background: #fff;
   padding: 20px;
   padding-bottom: 10px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .2);
