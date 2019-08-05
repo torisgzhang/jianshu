@@ -143,7 +143,7 @@ export const Addition = styled.div`
   top: 0;
 `
 
-export const Button = styled.a`
+export const Button = styled.div`
   width: 100px;
   height: 38px;
   line-height: 38px;
