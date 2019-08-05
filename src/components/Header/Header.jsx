@@ -71,7 +71,11 @@ class Header extends PureComponent {
         <Nav className="nav clearfix">
           <NavItem className="fl active">首页</NavItem>
           <NavItem className="fl"><i className="iconfont">&#xe615;</i>下载App</NavItem>
-          <NavItem className="fr">登录</NavItem>
+          {
+              <Link to="/login">
+                <NavItem className="fr">登录</NavItem>
+              </Link>
+          }
           <NavItem className="fr">
             <i className="iconfont">&#xe636;</i>
           </NavItem>
