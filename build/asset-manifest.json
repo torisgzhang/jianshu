@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/jianshu/static/css/main.846573bd.chunk.css",
-    "main.js": "/jianshu/static/js/main.13b827e1.chunk.js",
-    "runtime~main.js": "/jianshu/static/js/runtime~main.693738fd.js",
-    "vendors.js": "/jianshu/static/js/vendors.494877a9.chunk.js",
-    "static/js/3.01e92e43.chunk.js": "/jianshu/static/js/3.01e92e43.chunk.js",
-    "static/js/4.587420b7.chunk.js": "/jianshu/static/js/4.587420b7.chunk.js",
-    "static/js/5.87938b49.chunk.js": "/jianshu/static/js/5.87938b49.chunk.js",
-    "static/js/6.dd75d8d1.chunk.js": "/jianshu/static/js/6.dd75d8d1.chunk.js",
-    "index.html": "/jianshu/index.html",
-    "precache-manifest.874c1080de78ab792ed8bdbf56611243.js": "/jianshu/precache-manifest.874c1080de78ab792ed8bdbf56611243.js",
-    "service-worker.js": "/jianshu/service-worker.js",
-    "static/css/main.846573bd.chunk.css.map": "/jianshu/static/css/main.846573bd.chunk.css.map"
+    "main.css": "/static/css/main.846573bd.chunk.css",
+    "main.js": "/static/js/main.13b827e1.chunk.js",
+    "runtime~main.js": "/static/js/runtime~main.2047516a.js",
+    "vendors.js": "/static/js/vendors.c859c7a2.chunk.js",
+    "static/js/3.01e92e43.chunk.js": "/static/js/3.01e92e43.chunk.js",
+    "static/js/4.587420b7.chunk.js": "/static/js/4.587420b7.chunk.js",
+    "static/js/5.87938b49.chunk.js": "/static/js/5.87938b49.chunk.js",
+    "static/js/6.dd75d8d1.chunk.js": "/static/js/6.dd75d8d1.chunk.js",
+    "index.html": "/index.html",
+    "precache-manifest.6f4a8d4b2055134db0c38a9db225c50f.js": "/precache-manifest.6f4a8d4b2055134db0c38a9db225c50f.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.846573bd.chunk.css.map": "/static/css/main.846573bd.chunk.css.map"
   }
 }
