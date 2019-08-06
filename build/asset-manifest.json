@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Blog-jianshu/static/css/main.846573bd.chunk.css",
-    "main.js": "/Blog-jianshu/static/js/main.9d0fec90.chunk.js",
-    "runtime~main.js": "/Blog-jianshu/static/js/runtime~main.b22fed2b.js",
-    "vendors.js": "/Blog-jianshu/static/js/vendors.9e5530c7.chunk.js",
-    "static/js/3.f06ead24.chunk.js": "/Blog-jianshu/static/js/3.f06ead24.chunk.js",
-    "static/js/4.6f680257.chunk.js": "/Blog-jianshu/static/js/4.6f680257.chunk.js",
-    "static/js/5.c4bb51b4.chunk.js": "/Blog-jianshu/static/js/5.c4bb51b4.chunk.js",
-    "static/js/6.a68a3882.chunk.js": "/Blog-jianshu/static/js/6.a68a3882.chunk.js",
-    "index.html": "/Blog-jianshu/index.html",
-    "precache-manifest.23943af815894c096af734a8112d4dfc.js": "/Blog-jianshu/precache-manifest.23943af815894c096af734a8112d4dfc.js",
-    "service-worker.js": "/Blog-jianshu/service-worker.js",
-    "static/css/main.846573bd.chunk.css.map": "/Blog-jianshu/static/css/main.846573bd.chunk.css.map"
+    "main.css": "/jianshu/static/css/main.846573bd.chunk.css",
+    "main.js": "/jianshu/static/js/main.13b827e1.chunk.js",
+    "runtime~main.js": "/jianshu/static/js/runtime~main.693738fd.js",
+    "vendors.js": "/jianshu/static/js/vendors.494877a9.chunk.js",
+    "static/js/3.01e92e43.chunk.js": "/jianshu/static/js/3.01e92e43.chunk.js",
+    "static/js/4.587420b7.chunk.js": "/jianshu/static/js/4.587420b7.chunk.js",
+    "static/js/5.87938b49.chunk.js": "/jianshu/static/js/5.87938b49.chunk.js",
+    "static/js/6.dd75d8d1.chunk.js": "/jianshu/static/js/6.dd75d8d1.chunk.js",
+    "index.html": "/jianshu/index.html",
+    "precache-manifest.874c1080de78ab792ed8bdbf56611243.js": "/jianshu/precache-manifest.874c1080de78ab792ed8bdbf56611243.js",
+    "service-worker.js": "/jianshu/service-worker.js",
+    "static/css/main.846573bd.chunk.css.map": "/jianshu/static/css/main.846573bd.chunk.css.map"
   }
 }
